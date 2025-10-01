@@ -3,7 +3,6 @@ from modules.users.routes import create_user, read_user, update_user, delete_use
 
 app = FastAPI(title="User Management API")
 
-# Include semua router dari modul users
 app.include_router(create_user.router)
 app.include_router(read_user.router)
 app.include_router(update_user.router)

@@ -5,7 +5,6 @@ from modules.users import utils
 client = TestClient(app)
 
 def setup_function():
-    # Reset database sebelum setiap test
     utils.fake_users_db.clear()
     utils.user_id_counter = 1
 
@@ -28,7 +27,6 @@ def test_create_user_invalid_password():
     assert response.status_code == 422
 
 def test_read_users_as_admin():
-    # Username sudah diperbaiki menjadi "adminuser"
     client.post("/users/", json={"username": "adminuser", "email": "user1@example.com", "password": "Password!123", "role": "staff"})
     response = client.get("/users/", headers={"X-User-Role": "admin"})
     assert response.status_code == 200

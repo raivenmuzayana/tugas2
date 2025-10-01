@@ -1,5 +1,3 @@
-# File: modules/users/routes/update_user.py
-
 from fastapi import APIRouter, Depends, HTTPException, status
 from datetime import datetime, timezone
 from modules.users.schema import schemas

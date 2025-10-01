@@ -1,7 +1,5 @@
-# File: modules/users/routes/delete_user.py
-
 from fastapi import APIRouter, Depends, HTTPException, status
-from modules.users import utils # <-- UBAH IMPORT INI
+from modules.users import utils
 
 router = APIRouter()
 
